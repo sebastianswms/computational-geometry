@@ -1,6 +1,6 @@
 # Computational Geometry Package
 
-Practice project for CS4910.
+A practice project for CS4910 with computational geometry.
 
 ## Team members:
 
