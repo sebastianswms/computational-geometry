@@ -8,7 +8,9 @@ def test_point():
     assert my_point.coordinate() == [3,4]
     assert my_point.coordinate(dimension=0) == 3
     assert my_point.coordinate(dimension=1) == 4
-    assert math.isclose(my_point.distance_from(0,0), 5)
+
+    another_point = objects.Point(dimensions=2, coordinates=[0,0])
+    assert math.isclose(objects.Point.distance_between(my_point, another_point), 5.0)
 
     with pytest.raises(Exception):
         my_point.distance_from(12)
