@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "computational-geometry"
 version = "0.0.1"
-authors = ["F23-S24_WMU_Senior_Design Team_#5 <example@example.com>"]
+authors = ["Sebastian Smiley <example@example.com>"]
 description = "Computational Geometry practice project"
 readme = "README.md"
 
