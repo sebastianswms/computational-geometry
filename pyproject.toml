@@ -1,6 +1,8 @@
 [tool.poetry]
 name = "computational-geometry"
 version = "0.0.1"
+authors = ["F23-S24 WMU Senior Design Team #5"]
+description = "Computational Geometry practice project"
 readme = "README.md"
 
 [tool.poetry.dependencies]
