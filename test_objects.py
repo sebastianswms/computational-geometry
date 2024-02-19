@@ -17,3 +17,12 @@ def test_point():
         my_point.get_coordinates(dimension=2)
     with pytest.raises(ValueError):
         objects.Point(dimensions=2, coordinates=(3,4,5))
+
+def test_circle():
+    center_point = objects.Point(dimensions=2, coordinates=(3, 4))
+    my_circle = objects.Circle(center=center_point, radius=5)
+    assert my_circle.get_center() == center_point
+    assert my_circle.get_radius() == 5
+    assert math.isclose(my_circle.area(), math.pi * 5 ** 2)
+    assert math.isclose(my_circle.circumference(), 2 * math.pi * 5)
+    assert math.isclose(my_circle.diameter(), 10)
