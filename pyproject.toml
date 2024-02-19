@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "computational-geometry"
+version = "0.0.1"
+authors = ["Sebastian Smiley <example@example.com>"]
+description = "Computational Geometry practice project"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.0"

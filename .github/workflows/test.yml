@@ -1,0 +1,36 @@
+### GitHub CI for testing objects and computations
+
+name: computational-geometry test all
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs: {}
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    env:
+      PIP_CONSTRAINT: .github/workflows/constraints.txt
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: python set up for version ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: poetry installation
+      run: |
+        python -m pip install --upgrade pip
+        pipx install poetry
+    - name: dependency installation
+      run: |
+        poetry install
+    - name: pytest
+      run: |
+        poetry run pytest
