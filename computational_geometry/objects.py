@@ -15,7 +15,7 @@ class Manager():
     def __init__(self, args) -> None:
         self.args = args
 
-    def line_segment_intersection(lines: set[LineSegemnt]) -> Optional[set[Point]]:
+    def line_segment_intersection(lines: set[LineSegment]) -> Optional[set[Point]]:
         pass
     
     def closest_pair(points: set[Point]) -> set[Point]:
