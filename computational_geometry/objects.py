@@ -49,21 +49,21 @@ class Point(GeometricObject):
 
 class LineSegment(GeometricObject):
 
-    def __init__(self, start_point: Point, end_point: Point) -> None:
+    def __init__(self, point_a: Point, point_b: Point) -> None:
         super().__init__()
-        self._start_point: Point = start_point
-        self._end_point: Point = end_point
-        if start_point.get_dimensions() != end_point.get_dimensions():
+        self._point_a: Point = point_a
+        self._point_b: Point = point_b
+        if point_a.get_dimensions() != point_b.get_dimensions():
             raise ValueError("Start and end points must have the same dimensions.")
 
     def get_start_point(self) -> Point:
-        return self._start_point
+        return self._point_a
 
     def get_end_point(self) -> Point:
-        return self._end_point
+        return self._point_b
 
     def length(self) -> float:
-        return Point.distance_between(self._start_point, self._end_point)
+        return Point.distance_between(self._point_a, self._point_b)
 
 
 class Circle(GeometricObject):
