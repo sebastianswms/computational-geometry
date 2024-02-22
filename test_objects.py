@@ -27,7 +27,7 @@ def test_circle():
     assert math.isclose(my_circle.circumference(), 10 * math.pi)
     assert math.isclose(my_circle.diameter(), 10)
 
-def test_closest_pair()
+def test_closest_pair():
 
     a = o.Point(2,(0,0))
     b = o.Point(2,(3,4))
