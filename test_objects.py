@@ -37,7 +37,7 @@ def test_closest_pair():
     f = o.Point(2,(9,16))
     g = o.Point(2,(9,16))
 
-    manager = Manager("args")
+    manager = o.Manager("args")
     with pytest.raises(ValueError):
         assert manager.closest_pair(set(a))
     assert manager.closest_pair(set(a,b)) == set(a,b)
