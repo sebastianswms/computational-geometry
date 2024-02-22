@@ -10,6 +10,23 @@ class GeometricObject():
         raise NotImplementedError()
 
 
+class Manager():
+
+    def __init__(self, args) -> None:
+        self.args = args
+
+    def line_segment_intersection(lines: set[LineSegemnt]) -> Optional[set[Point]]:
+        pass
+    
+    def closest_pair(points: set[Point]) -> set[Point]:
+        pass
+    
+    def convex_hull(points: set[Point]) -> set[Point]:
+        pass
+
+    def largest_empty_circle(points: set[Point]) -> Circle:
+        pass
+
 class Point(GeometricObject):
 
     def __init__(self, dimensions: int, coordinates: tuple[int]) -> None:
