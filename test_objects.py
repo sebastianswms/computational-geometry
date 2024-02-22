@@ -44,4 +44,4 @@ def test_closest_pair():
     with pytest.raises(RuntimeError):
         assert manager.closest_pair({a,b,c})
     assert manager.closest_pair({a,b,c,d,e,f}) == {d,e}
-    assert manager.closest_pair({a,b,c,d,e,f,})) == {f,g}
+    assert manager.closest_pair({a,b,c,d,e,f,}) == {f,g}
