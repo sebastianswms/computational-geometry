@@ -28,7 +28,7 @@ class Manager():
         best_pair: Optional[set[Point]] = None
         tie: bool = False
 
-        for pair in combinations(my_set, 2):
+        for pair in combinations(points, 2):
             distance = Point.distance_between(pair[0],pair[1])
             if best_pair == None or distance < min_distance:
                 min_distance = distance
