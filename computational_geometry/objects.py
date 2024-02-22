@@ -48,12 +48,29 @@ class Point(GeometricObject):
 
 
 class LineSegment(GeometricObject):
-    
-    def __init__(self) -> None:
+
+    def __init__(self):
         super().__init__()
 
 
 class Circle(GeometricObject):
 
-    def __init__(self) -> None:
+    def __init__(self, center: Point, radius: float) -> None:
         super().__init__()
+        self._center = center
+        self._radius = radius
+
+    def get_center(self) -> Point:
+        return self._center
+
+    def get_radius(self) -> float:
+        return self._radius
+
+    def area(self) -> float:
+        return math.pi * self._radius ** 2
+
+    def circumference(self) -> float:
+        return 2 * math.pi * self._radius
+
+    def diameter(self) -> float:
+        return 2 * self._radius
