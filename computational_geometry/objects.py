@@ -17,10 +17,10 @@ class Manager():
     def __init__(self, args) -> None:
         self.args = args
 
-    def line_segment_intersection(lines: set[LineSegment]) -> Optional[set[Point]]:
+    def line_segment_intersection(self, lines: set[LineSegment]) -> Optional[set[Point]]:
         pass
     
-    def closest_pair(points: set[Point]) -> set[Point]:
+    def closest_pair(self, points: set[Point]) -> set[Point]:
         if len(points) < 2:
             raise ValueError("Must provide at least two points.")
         
@@ -43,10 +43,10 @@ class Manager():
         return best_pair
 
     
-    def convex_hull(points: set[Point]) -> set[Point]:
+    def convex_hull(self, points: set[Point]) -> set[Point]:
         pass
 
-    def largest_empty_circle(points: set[Point]) -> Circle:
+    def largest_empty_circle(self, points: set[Point]) -> Circle:
         pass
 
 class Point(GeometricObject):
