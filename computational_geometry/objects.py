@@ -32,7 +32,7 @@ class Manager():
             distance = Point.distance_between(pair[0],pair[1])
             if best_pair == None or distance < min_distance:
                 min_distance = distance
-                best_pair = set(pair[0],pair[1])
+                best_pair = {pair[0],pair[1]}
                 tie = False
                 continue
             if distance == min_distance:

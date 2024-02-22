@@ -39,9 +39,9 @@ def test_closest_pair():
 
     manager = o.Manager("args")
     with pytest.raises(ValueError):
-        assert manager.closest_pair(set(a))
-    assert manager.closest_pair(set(a,b)) == set(a,b)
+        assert manager.closest_pair({a})
+    assert manager.closest_pair({a,b}) == {a,b}
     with pytest.raises(RuntimeError):
-        assert manager.closest_pair(set(a,b,c))
-    assert manager.closest_pair(set(a,b,c,d,e,f)) == set(d,e)
-    assert manager.closest_pair(set(a,b,c,d,e,f,g)) == set(f,g)
+        assert manager.closest_pair({a,b,c})
+    assert manager.closest_pair({a,b,c,d,e,f}) == {d,e}
+    assert manager.closest_pair({a,b,c,d,e,f,})) == {f,g}
