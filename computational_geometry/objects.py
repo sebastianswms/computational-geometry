@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import Optional
 import math
 
@@ -9,6 +10,23 @@ class GeometricObject():
     def get_dimensions() -> int:
         raise NotImplementedError()
 
+
+class Manager():
+
+    def __init__(self, args) -> None:
+        self.args = args
+
+    def line_segment_intersection(lines: set[LineSegment]) -> Optional[set[Point]]:
+        pass
+    
+    def closest_pair(points: set[Point]) -> set[Point]:
+        pass
+    
+    def convex_hull(points: set[Point]) -> set[Point]:
+        pass
+
+    def largest_empty_circle(points: set[Point]) -> Circle:
+        pass
 
 class Point(GeometricObject):
 
