@@ -26,3 +26,22 @@ def test_circle():
     assert math.isclose(my_circle.area(), 25 * math.pi)
     assert math.isclose(my_circle.circumference(), 10 * math.pi)
     assert math.isclose(my_circle.diameter(), 10)
+
+def test_closest_pair():
+
+    a = o.Point(2,(0,0))
+    b = o.Point(2,(3,4))
+    c = o.Point(2,(0,8))
+    d = o.Point(2,(8,5))
+    e = o.Point(2,(12,3))
+    f = o.Point(2,(9,16))
+    g = o.Point(2,(9,16))
+
+    manager = o.Manager("args")
+    with pytest.raises(ValueError):
+        assert manager.closest_pair({a})
+    assert manager.closest_pair({a,b}) == {a,b}
+    with pytest.raises(RuntimeError):
+        assert manager.closest_pair({a,b,c})
+    assert manager.closest_pair({a,b,c,d,e,f}) == {d,e}
+    assert manager.closest_pair({a,b,c,d,e,f,g}) == {f,g}

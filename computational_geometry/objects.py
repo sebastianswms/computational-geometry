@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from itertools import combinations
 import math
 
 class GeometricObject():
@@ -16,16 +17,36 @@ class Manager():
     def __init__(self, args) -> None:
         self.args = args
 
-    def line_segment_intersection(lines: set[LineSegment]) -> Optional[set[Point]]:
+    def line_segment_intersection(self, lines: set[LineSegment]) -> Optional[set[Point]]:
         pass
     
-    def closest_pair(points: set[Point]) -> set[Point]:
-        pass
+    def closest_pair(self, points: set[Point]) -> set[Point]:
+        if len(points) < 2:
+            raise ValueError("Must provide at least two points.")
+        
+        min_distance: float = 0
+        best_pair: Optional[set[Point]] = None
+        tie: bool = False
+
+        for pair in combinations(points, 2):
+            distance = Point.distance_between(pair[0],pair[1])
+            if best_pair == None or distance < min_distance:
+                min_distance = distance
+                best_pair = {pair[0],pair[1]}
+                tie = False
+                continue
+            if distance == min_distance:
+                tie = True
+        
+        if tie:
+            raise RuntimeError("No unique pair of closest points. There is a tie.")
+        return best_pair
+
     
-    def convex_hull(points: set[Point]) -> set[Point]:
+    def convex_hull(self, points: set[Point]) -> set[Point]:
         pass
 
-    def largest_empty_circle(points: set[Point]) -> Circle:
+    def largest_empty_circle(self, points: set[Point]) -> Circle:
         pass
 
 class Point(GeometricObject):
